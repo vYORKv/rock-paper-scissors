@@ -8,17 +8,18 @@ function computerPlay() {
     return choice;
 }
 
-//Awaits player input and trims the input of spaces and lowers casing
-function playerPlay() {
-    let playerInput = prompt("Please enter a selection:").trim().toLowerCase();
+//Takes player input from button and returns it for playOnce function
+function playerPlay(playerInput) {
+    // let playerInput = prompt("Please enter a selection:").trim().toLowerCase();
     return playerInput;
 }
 
 //Single playthrough pitting player against computer
-function playOnce() {
-    let pc = playerPlay();
+function playOnce(playerInput) {
+    let pi = playerInput
+    let pc = playerPlay(pi);
     let cc = computerPlay();
-    console.log(`You chose: ${pc} and Computer chose: ${cc}`)
+    alert(`You chose: ${pc} and Computer chose: ${cc}`)
     if ((pc == "rock" && cc == "paper") || (pc == "paper" && cc == "scissors") || (pc == "scissors" && cc == "rock"))
      {
          console.log("You lose the round!");
@@ -36,7 +37,7 @@ function playOnce() {
 }
 
 //Function that loops the game five times and outputs winner based on final score
-function game() {
+/* function game() {
     for (let i = 0; i <= 4; i++) {
         playOnce();
     }
@@ -52,13 +53,22 @@ function game() {
      {
         console.log(`The final score is ${playerScore}-${compScore}. The match results in a tie!`);
      }
-}
+} */
 
-function outputEven() {
+/* function outputEven() {
     for (let i = 1; i <= 10; i++) {
         if (i % 2 == 0)
         {
             console.log(i);
         }
     }
-}
+} */
+
+//JS-CSS Script
+const rockbtn = document.querySelector("#rock");
+const paperbtn = document.querySelector("#paper");
+const scissorsbtn = document.querySelector("#scissors");
+
+rockbtn.addEventListener("click", () => {
+    playOnce("rock");
+})
