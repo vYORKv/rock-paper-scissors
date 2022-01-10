@@ -19,22 +19,27 @@ function playOnce(playerInput) {
     let pi = playerInput
     let pc = playerPlay(pi);
     let cc = computerPlay();
-    alert(`You chose: ${pc} and Computer chose: ${cc}`)
     if ((pc == "rock" && cc == "paper") || (pc == "paper" && cc == "scissors") || (pc == "scissors" && cc == "rock"))
      {
-         console.log("You lose the round!");
+         alert(`You chose: ${pc} and Computer chose: ${cc}`);
          compScore++;
+         cscore.textContent = `Computer Score: ${compScore}`;
      }
      else if ((pc == "rock" && cc == "scissors") || (pc == "scissors" && cc == "paper") || (pc == "paper" && cc == "rock"))
      {
-         console.log("You win the round!");
+         alert(`You chose: ${pc} and Computer chose: ${cc}`);
          playerScore++;
+         pscore.textContent = `Your Score: ${playerScore}`;
      }
      else if (pc == cc)
      {
-         console.log("It's a tie!");
+         alert(`You chose: ${pc} and Computer chose: ${cc}`);
      }
 }
+
+/* function updateScores() {
+    return 
+} */
 
 //Function that loops the game five times and outputs winner based on final score
 /* function game() {
@@ -68,7 +73,19 @@ function playOnce(playerInput) {
 const rockbtn = document.querySelector("#rock");
 const paperbtn = document.querySelector("#paper");
 const scissorsbtn = document.querySelector("#scissors");
+const pscore = document.querySelector("#pscore");
+const cscore = document.querySelector("#cscore");
+
 
 rockbtn.addEventListener("click", () => {
     playOnce("rock");
 })
+paperbtn.addEventListener("click", () => {
+    playOnce("paper");
+})
+scissorsbtn.addEventListener("click", () => {
+    playOnce("scissors");
+})
+/* const scores = document.createElement("h1");
+scores.textContent = `Score: You - ${playerScore}  Computer - ${compScore}`;
+scoresdiv.appendChild(scores); */
