@@ -60,24 +60,24 @@ function endGame() {
 }
 
 //JS-CSS/HTML Script
-const Rockbtn = document.querySelector("#Rock");
-const Paperbtn = document.querySelector("#Paper");
-const Scissorsbtn = document.querySelector("#Scissors");
+const rockbtn = document.querySelector("#rock");
+const paperbtn = document.querySelector("#paper");
+const scissorsbtn = document.querySelector("scissors");
 const pscore = document.querySelector("#pscore");
 const cscore = document.querySelector("#cscore");
 const body = document.body;
 const h1 = document.createElement("h1");
 
 h1.textContent = "Rock Paper Scissors! First to 5 wins!";
-body.insertBefore(h1, Rockbtn);
+body.insertBefore(h1, rockbtn);
 
 
-Rockbtn.addEventListener("click", () => {
+rockbtn.addEventListener("click", () => {
     playGame("Rock");
 })
-Paperbtn.addEventListener("click", () => {
+paperbtn.addEventListener("click", () => {
     playGame("Paper");
 })
-Scissorsbtn.addEventListener("click", () => {
+scissorsbtn.addEventListener("click", () => {
     playGame("Scissors");
 })
